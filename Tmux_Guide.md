@@ -24,6 +24,9 @@ The name of the session is the first column of the output.
 As you can see from the output, there are two running Tmux sessions.  
 For example, to attach to session 0, you would type:  
 `tmux attach-session -t 0`  
+# Kill Tmux Session  
+When you're done and no longer required a Tmux session, you can kill it at any time with command:  
+`tmux kill-session -t session_name`  
 # Working with Tmux Windows and Panes
 When you start a new Tmux session, by default, it creates a single window with a shell in it.  
 To create a new window with shell type  
