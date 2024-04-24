@@ -42,3 +42,4 @@ Below are some most common commands for managing Tmux windows and panes:
 - `Ctrl+b` `o` Go to the next pane
 - `Ctrl+b` `;` Toggle between the current and previous pane
 - `Ctrl+b` `x` Close the current pane
+- `ctrl+b` `[` scrolling
