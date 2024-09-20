@@ -35,6 +35,6 @@ module TB();
   DUT_dummy DUT_U1 (.*);
   
   //Binding with coverage module using implicit port connection
-                                    
+  we can bind the internal signal by cross-module-reference as well e.g dut.valid_i etc                                  
   bind <name_of_module_to_bind_with> <coverage_module_name> <instanace_name> (.<coverage_module_ports(dut_module_ports));
 endmodule : TB
