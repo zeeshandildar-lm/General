@@ -11,7 +11,7 @@ module DUT_dummy (output logic [7:0] out,
   
 endmodule : DUT_dummy
  
-module SVA_dummy (input [7:0] out, in,
+module coverage_mod (input [7:0] out, in,
                   input x,
                   input wr, rd, clk, rst_n);
   
@@ -22,7 +22,7 @@ module SVA_dummy (input [7:0] out, in,
   `assert_clk (x > 1 |-> out);
   ...
  
-endmodule : SVA_dummy
+endmodule : coverage_mod
                     
 module TB();
   logic [7:0] out;
@@ -34,8 +34,7 @@ module TB();
   
   DUT_dummy DUT_U1 (.*);
   
-  //Binding with SVA using implicit port connection
-  bind DUT_dummy : DUT_U1 SVA_dummy sva (.*); // bind <name of module>: hierarchical path to the instance <name of other module> inst_name(.second_module_signal(first_module_signa));
-  ...
-  ...
+  //Binding with coverage module using implicit port connection
+                                    
+  bind <name_of_module_to_bind_with> <coverage_module_name> <instanace_name> (.<coverage_module_ports(dut_module_ports));
 endmodule : TB
